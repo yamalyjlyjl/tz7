@@ -1,0 +1,26 @@
+#include"stdio.h"
+#include"string.h"
+int main()
+{
+	int x,m,i;
+	scanf("%d",&x);
+	int a[x],b[x];
+	char ch[x][17];
+	for(i=0;i<x;i++)
+	scanf("%s %d %d",ch[i],&a[i],&b[i]);
+	printf("请输入一个正整数:\n");
+	scanf("%d",&m);
+	printf("请输入%d个待查询的试机座位号码:\n",m);
+	int p[m];
+	for(i=0;i<m;i++)
+	scanf("%d",&p[i]);
+	for(i=0;i<m;i++)
+	{
+		for(int j=0;j<x;j++)
+		if(a[j]==p[i])
+		{
+			printf("%s %d\n",ch[j],b[j]);
+			break;
+		}
+	}
+}
